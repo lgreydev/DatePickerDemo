@@ -10,12 +10,21 @@ import TinyConstraints
 
 class ViewController: UIViewController {
 
+
+    private lazy var textField: UITextField = {
+        let textField = UITextField()
+//        textField.inputView = datePicker
+        textField.borderStyle = .line
+        textField.height(50)
+        return textField
+    }()
+
+
     private lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
-        picker.locale = .current
-        picker.datePickerMode = .dateAndTime
-        picker.preferredDatePickerStyle = .compact
+        picker.datePickerMode = .date
         picker.tintColor = .systemMint
+        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         return picker
     }()
 
@@ -27,13 +36,23 @@ class ViewController: UIViewController {
 
         addConstraints()
     }
+
+    @objc func dateChanged() {
+        textField.text = datePicker.date.formatted()
+    }
 }
 
 private extension ViewController {
     func addConstraints() {
-        view.addSubview(datePicker)
-        datePicker.bottomToSuperview(offset: -50)
-        datePicker.centerXToSuperview()
 
+        view.addSubview(textField)
+        textField.centerInSuperview()
+        textField.leadingToSuperview(offset: 50)
+        textField.trailingToSuperview(offset: 50)
+
+        textField.addSubview(datePicker)
+//        datePicker.bottomToSuperview(offset: -50)
+        datePicker.centerXToSuperview()
+        datePicker.centerYToSuperview()
     }
 }
