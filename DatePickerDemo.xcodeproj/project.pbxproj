@@ -12,6 +12,7 @@
 		5E341A98283FA2B90015F522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E341A97283FA2B90015F522 /* ViewController.swift */; };
 		5E341A9D283FA2BB0015F522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E341A9C283FA2BB0015F522 /* Assets.xcassets */; };
 		5E341AA0283FA2BB0015F522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E341A9E283FA2BB0015F522 /* LaunchScreen.storyboard */; };
+		5E341AA928408EF60015F522 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 5E341AA828408EF60015F522 /* TinyConstraints */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E341AA928408EF60015F522 /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +82,9 @@
 			dependencies = (
 			);
 			name = DatePickerDemo;
+			packageProductDependencies = (
+				5E341AA828408EF60015F522 /* TinyConstraints */,
+			);
 			productName = DatePickerDemo;
 			productReference = 5E341A90283FA2B90015F522 /* DatePickerDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +113,9 @@
 				Base,
 			);
 			mainGroup = 5E341A87283FA2B90015F522;
+			packageReferences = (
+				5E341AA728408EF60015F522 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+			);
 			productRefGroup = 5E341A91283FA2B90015F522 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5E341AA728408EF60015F522 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E341AA828408EF60015F522 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E341AA728408EF60015F522 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E341A88283FA2B90015F522 /* Project object */;
 }

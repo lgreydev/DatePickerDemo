@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TinyConstraints
 
 class ViewController: UIViewController {
 
@@ -24,11 +25,15 @@ class ViewController: UIViewController {
 
         view.backgroundColor = .white
 
-        view.addSubview(datePicker)
-        datePicker.center = view.center
-
+        addConstraints()
     }
-
-
 }
 
+private extension ViewController {
+    func addConstraints() {
+        view.addSubview(datePicker)
+        datePicker.bottomToSuperview(offset: -50)
+        datePicker.centerXToSuperview()
+
+    }
+}
